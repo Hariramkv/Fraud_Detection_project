@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-Time Fraud Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>💳 Real-Time Credit Card Fraud Detection</h1>
+
+<p>Analyze transactions instantly using rule-based fraud detection.</p>
+
+<form action="/analyze" method="POST">
+
+    <label>Card Number</label>
+    <input type="text" name="card" placeholder="XXXX-XXXX-XXXX-1234" required>
+
+    <label>Transaction Amount</label>
+    <input type="number" name="amount" required>
+
+    <label>Merchant Type</label>
+    <input type="text" name="merchant" required>
+
+    <label>Location</label>
+    <input type="text" name="location" required>
+
+    <label>Failed Attempts</label>
+    <input type="number" name="failed_attempts" required>
+
+    <button type="submit">🚀 Analyze Transaction</button>
+
+</form>
+
+<br>
+<a href="/dashboard">📊 View Dashboard</a>
+
+</body>
+</html>

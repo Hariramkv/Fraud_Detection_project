@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>📊 Transaction Dashboard</h1>
+
+<table border="1">
+<tr>
+    <th>Card</th>
+    <th>Amount</th>
+    <th>Location</th>
+    <th>Status</th>
+    <th>Score</th>
+</tr>
+
+{% for t in data %}
+<tr>
+    <td>****{{ t.card }}</td>
+    <td>{{ t.amount }}</td>
+    <td>{{ t.location }}</td>
+    <td>{{ t.status }}</td>
+    <td>{{ t.score }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<a href="/">⬅ Back</a>
+
+</body>
+</html>

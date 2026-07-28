@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>🔍 Transaction Result</h1>
+
+{% if status == "FRAUD" %}
+    <h2 style="color:red;">🚨 FRAUD DETECTED</h2>
+{% elif status == "SUSPICIOUS" %}
+    <h2 style="color:orange;">⚠️ SUSPICIOUS</h2>
+{% else %}
+    <h2 style="color:green;">✅ GENUINE</h2>
+{% endif %}
+
+<h3>Fraud Score: {{ score }}%</h3>
+
+<!-- 🔥 Fraud Meter -->
+<div class="meter">
+    <div class="meter-fill" style="width: {{ score }}%;"></div>
+</div>
+
+<h3>{{ alert }}</h3>
+
+<h3>Reasons:</h3>
+<ul>
+{% for r in reasons %}
+    <li>{{ r }}</li>
+{% endfor %}
+</ul>
+
+<br>
+<a href="/">🔁 New Transaction</a> |
+<a href="/dashboard">📊 Dashboard</a> |
+<a href="/analytics">📈 Analytics</a>
+
+</body>
+</html>
